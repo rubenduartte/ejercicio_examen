@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="../Template/Template.xhtml">
+
+            <ui:define name="content">
+                
+                 <h:form id="empleadoForm" class="form-horizontal">
+                    <p:tab title="Empleado" id="tab"> 
+                        <div class="panel panel-default clearfix">
+                            <div class="panel-heading mb20">Empleado</div>
+                            <div class="col-sm-6">
+
+                                <div class="form-group">
+                                    <label for="in1" class="col-sm-4 control-label">Nombre</label>
+                                    <div class="col-sm-8">
+                                        <p:inputText id="in1" style="width: 100%" value="#{empleadoBean.selected.nombre}" required="true" requiredMessage="Ingrese Nombre"/>                                          
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="in2" class="col-sm-4 control-label">Apellido</label>
+                                    <div class="col-sm-8">
+                                        <p:inputText id="in2" style="width: 100%" value="#{empleadoBean.selected.apellido}" requiredMessage="Ingrese Apellido"/>                                          
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="in3" class="col-sm-4 control-label">Usuario</label>
+                                    <div class="col-sm-8">
+                                        <p:inputText id="in3" style="width: 100%" value="#{empleadoBean.selected.usuario}" requiredMessage="Ingrese Usuario"/>                                          
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="in3" class="col-sm-4 control-label">Clave</label>
+                                    <div class="col-sm-8">
+                                        <p:inputText id="in4" style="width: 100%" value="#{empleadoBean.selected.clave}" requiredMessage="Ingrese Clave"/>                                          
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </p:tab>
+                    <h:panelGroup id="listaBotones">
+                        <center>
+                            <p:commandButton id="salvar" value="Guardar" action="#{empleadoBean.salvar}" ajax="false" update="empleadoForm :messages" process="@this in1 in2 in4 "></p:commandButton>
+                            <p:commandButton id="cancelar" value="Salir"   process="@this"></p:commandButton>
+                        </center>
+                    </h:panelGroup>
+                
+                
+                 </h:form>
+                
+                
+                
+                
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

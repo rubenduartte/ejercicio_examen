@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+ <body>
+
+        <ui:composition template="../Template/Template.xhtml">
+
+            <ui:define name="content">
+
+                <h:form id="empleadoForm" class="form-horizontal">
+                    <p:tab title="Lista Empleados" id="tab">         
+                        <div class="panel panel-default clearfix">
+                            <div class="panel-heading mb20">Lista de Empleados</div>
+                            <div class="col-sm-8">
+
+                                <div class="panel panel-default clearfix">
+                                    <div class="panel panel-default clearfix"/>
+                                    <div>
+
+                                        <h:panelGroup id="listEmpleado" >
+                                            <p:dataTable var="empleado" value="#{empleadoBean.item}" >
+
+                                                <p:column headerText="Nombre">
+                                                    <h:outputText value="#{empleado.nombre}" />
+                                                </p:column>
+
+                                                <p:column headerText="Apellido">
+                                                    <h:outputText value="#{empleado.apellido}" />
+                                                </p:column>
+
+                                                <p:column headerText="Usuario">
+                                                    <h:outputText value="#{empleado.usuario}" />
+                                                </p:column>
+                                                
+                                                <p:column headerText="Clave">
+                                                    <h:outputText value="#{empleado.clave}" />
+                                                </p:column>
+
+                                                <p:column headerText="Accion">
+                                                    <p:commandButton value="editar" process="@this" action="empleadoCrear" ajax="false">
+                                                        <f:setPropertyActionListener target="#{empleadoBean.selected}" value="#{empleado}" />
+                                                    </p:commandButton> 
+                                                </p:column>
+
+                                            </p:dataTable>
+
+
+                                        </h:panelGroup>    
+                                    </div>
+
+                                </div>
+
+                            </div> 
+
+                        </div>
+                    </p:tab>
+                </h:form>
+
+
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
