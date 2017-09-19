@@ -32,20 +32,20 @@ and open the template in the editor.
                                 <div class="form-group">
                                     <label for="in2" class="col-sm-4 control-label">Apellido</label>
                                     <div class="col-sm-8">
-                                        <p:inputText id="in2" style="width: 100%" value="#{empleadoBean.selected.apellido}" requiredMessage="Ingrese Apellido"/>                                          
+                                        <p:inputText id="in2" style="width: 100%" value="#{empleadoBean.selected.apellido}" required="true" requiredMessage="Ingrese Apellido"/>                                          
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="in3" class="col-sm-4 control-label">Usuario</label>
                                     <div class="col-sm-8">
-                                        <p:inputText id="in3" style="width: 100%" value="#{empleadoBean.selected.usuario}" requiredMessage="Ingrese Usuario"/>                                          
+                                        <p:inputText id="in3" style="width: 100%" value="#{empleadoBean.selected.usuario}" required="true" requiredMessage="Ingrese Usuario"/>                                          
                                     </div>
                                 </div>
                                 
                                 <div class="form-group">
                                     <label for="in3" class="col-sm-4 control-label">Clave</label>
                                     <div class="col-sm-8">
-                                        <p:inputText id="in4" style="width: 100%" value="#{empleadoBean.selected.clave}" requiredMessage="Ingrese Clave"/>                                          
+                                        <p:inputText id="in4" style="width: 100%" value="#{empleadoBean.selected.clave}" required="true" requiredMessage="Ingrese Clave"/>                                          
                                     </div>
                                 </div>
                                 
@@ -55,7 +55,7 @@ and open the template in the editor.
                     <h:panelGroup id="listaBotones">
                         <center>
                             <p:commandButton id="salvar" value="Guardar" action="#{empleadoBean.salvar}" ajax="false" update="empleadoForm :messages" process="@this in1 in2 in4 "></p:commandButton>
-                            <p:commandButton id="cancelar" value="Salir"   process="@this"></p:commandButton>
+                           
                         </center>
                     </h:panelGroup>
                 
